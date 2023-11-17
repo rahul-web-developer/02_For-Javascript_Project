@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+
+        
+        }
+
+
+        .container{
+            width: 50%;
+            height: auto;
+
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            border: 2px solid red;
+            margin: 50px auto;
+
+            padding: 10px;
+        }
+
+
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+        }
+
+        button,input{
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+
+
+        <div class="box">
+
+            <p>Paragraph:</p>
+            <input type="number" id="value" placeholder="Enter here...">
+            <button id="add" onclick="genrate()">Add</button>
+        </div>
+
+        <div class="data" style="display: block;" id="datacon">
+
+        </div>
+
+
+    </div>
+    
+
+
+    <script>
+
+
+let text = ['random code for user','random code for user','random code for user','random code jjjjjjjjjjjjjfor user','random code for usggggggggggggmer','random code for user','random code for user','random cgggggggggggode for user','random code for user'];
+
+
+
+
+
+const items = document.querySelector('#value')
+const data = document.querySelector('#datacon')
+
+
+const genrate = ()=>{
+
+    if(isNaN(items) || items.value < 0 || items.value > 9){
+        const random = Math.floor(Math.random()*text.length)
+
+
+
+data.innerHTML = `<p> ${text[random]} </p>`
+
+    }else{
+        const data = text.slice(0,items.value)
+
+        const para = data.map((d)=>{
+
+            return `<p> ${d}</p>`
+        })
+    }
+
+}
+
+
+    </script>
+</body>
+</html>
